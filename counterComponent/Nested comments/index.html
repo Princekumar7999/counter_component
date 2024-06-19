@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            height:400px;
+            width:400px;
+            background-color: thistle;
+            border: 2px solid black;
+            display:flex;
+        }
+        .child{
+            margin: auto;
+            height: 100px;
+            width: 100px;
+            background-color: bisque;
+            border: 2px solid black;
+        }
+        .red{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+</body>
+<script>
+    var parent=documnet.querySelector(".parent");
+    //var child=documnet.querySelector(".child");
+    var children=documnet.querySelectoreAll('.child');
+    //console.log(children);
+    for(var i=0;i<children.length;i++){
+        var child=children[i];
+        child.addEvnetListener("click",function(e){
+            e.stoppropagation();
+        e.target.classList.add('red');
+    });
+}
+</script>
+</html>
